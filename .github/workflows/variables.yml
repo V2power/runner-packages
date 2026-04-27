@@ -1,0 +1,44 @@
+name: variáveis de ambiente
+on: 
+  workflow_dispatch:
+env:
+  ENV_WORKLOW: "Valor WORKFLOW"
+jobs:
+  teste-env:
+    runs-on: ubuntu-latest
+    env:
+      ENV_JOB: "Valor JOB"
+    steps:
+      - name: Execução
+        env:
+          ENV_ACTION: "Valor ACTION - Primeira"
+        run: |
+          echo "$ENV_WORKFLOW"
+          echo "$ENV_JOB"
+          echo "$ENV_ACTION"
+      - name: Execução 2
+        env:
+          ENV_ACTION: "Valor ACTION - Segunda"
+        run: |
+          echo "$ENV_WORKFLOW"
+          echo "$ENV_JOB"
+          echo "$ENV_ACTION"
+  teste-env2:
+    runs-on: ubuntu-latest
+    env:
+      ENV_JOB: "Valor JOB 2"
+    steps:
+      - name: Execução
+        env:
+          ENV_ACTION: "Valor ACTION - Primeira"
+        run: |
+          echo "$ENV_WORKFLOW"
+          echo "$ENV_JOB"
+          echo "$ENV_ACTION"
+      - name: Execução 2
+        env:
+          ENV_ACTION: "Valor ACTION - Segunda"
+        run: |
+          echo "$ENV_WORKFLOW"
+          echo "$ENV_JOB"
+          echo "$ENV_ACTION"
