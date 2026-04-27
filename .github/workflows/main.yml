@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Instalação ffmpeg
         run: |
-          sudo apt uptade --yes
+          sudo apt update --yes
           sudo apt install ffmpeg --yes
       - name: Versão ffmpeg
         run: |
